@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakthi vel C | Full-Stack Developer & ML Enthusiast</title>
-    <meta name="description" content="Portfolio of Sakthi vel C - Computer Science Student, Full-Stack Developer, and ML Enthusiast.">
+    <title>Sakthivel C | Full-Stack Developer & ML Enthusiast</title>
+    <meta name="description" content="Portfolio of Sakthivel C - Computer Science Student, Full-Stack Developer, and ML Enthusiast.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -267,10 +267,19 @@
             font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
             margin-bottom: 12px; display: inline-block; width: fit-content;
         }
+        
+        /* In Progress Style */
         .in-progress {
             background-color: rgba(245, 158, 11, 0.15); /* Amber tint */
             color: #d97706; /* Amber 600 */
             border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        /* Completed Style */
+        .completed {
+            background-color: rgba(16, 185, 129, 0.15); /* Emerald tint */
+            color: #059669; /* Emerald 600 */
+            border: 1px solid rgba(16, 185, 129, 0.3);
         }
 
         /* STATS */
@@ -351,18 +360,83 @@
         .exp-desc li::before { content: '▹'; position: absolute; left: 0; color: var(--primary); }
         [data-theme="dark"] .exp-desc li::before { color: var(--accent); }
 
-        /* FOOTER */
+        /* PROFESSIONAL FOOTER */
         footer {
-            background: var(--secondary); color: #94a3b8; padding: 60px 0 30px;
-            text-align: center; border-top: 1px solid var(--border-glass);
+            background: linear-gradient(to bottom, #0f172a, #020617); /* Deep Professional Gradient */
+            padding: 80px 0 40px;
+            text-align: center;
+            border-top: 4px solid var(--primary); /* Strong top border */
+            position: relative;
+            overflow: hidden;
+            color: #fff;
         }
-        .footer-socials { display: flex; justify-content: center; gap: 16px; margin-bottom: 24px; }
+
+        /* Subtle Background Pattern for Footer */
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at 50% 0%, rgba(70, 130, 180, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .footer-content {
+            position: relative; z-index: 2; /* Ensure content is above pattern */
+        }
+
+        .footer-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+            display: inline-block;
+        }
+
+        .footer-logo span { color: var(--accent); }
+
+        .footer-socials {
+            display: flex; justify-content: center; gap: 20px; margin-bottom: 32px;
+        }
+
         .social-btn {
-            width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.05);
-            display: flex; justify-content: center; align-items: center; transition: var(--transition);
-            color: #fff; border: 1px solid rgba(255,255,255,0.1);
+            width: 50px; height: 50px;
+            border-radius: 12px; /* Modern soft square */
+            background: rgba(255,255,255,0.05);
+            display: flex; justify-content: center; align-items: center;
+            transition: var(--transition);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
-        .social-btn:hover { background: var(--accent); transform: translateY(-5px); border-color: var(--accent); }
+
+        .social-btn:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(70, 130, 180, 0.5);
+            border-color: var(--accent);
+        }
+
+        .footer-credit {
+            font-size: 1.2rem; font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 8px;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: #64748B;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+        }
 
         /* ANIMATION UTILS */
         .fade-in-up {
@@ -429,7 +503,7 @@
                     <div class="hero-avatar-container">
                         <!-- PROFILE IMAGE: Loads profile.jpg from local folder -->
                         <img src="profile.jpg" 
-                             alt="Sakthi vel C" 
+                             alt="Sakthivel C" 
                              class="hero-avatar"
                              onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Sakthivel+C&background=1F4788&color=fff&size=256';">
                     </div>
@@ -458,9 +532,10 @@
     <!-- STATS OVERLAY -->
     <div class="container">
         <div class="stats-grid">
+            <!-- UPDATED STAT: SkillRack 120+ -->
             <div class="glass-card stat-card fade-in-up">
-                <span class="stat-number" data-target="101">0</span>
-                <p class="text-accent" style="font-weight: 600;">LeetCode Solved</p>
+                <span class="stat-number" data-target="120">0</span>
+                <p class="text-accent" style="font-weight: 600;">SkillRack Solved</p>
             </div>
             <div class="glass-card stat-card fade-in-up">
                 <span class="stat-number" data-target="2">0</span>
@@ -524,7 +599,7 @@
                                 <h4 style="margin-bottom: 4px;">SkillRack Elite</h4>
                                 <p style="font-size: 0.9rem; color: var(--text-light);">Ongoing</p>
                                 <p style="font-size: 0.95rem; line-height: 1.6;">
-                                    Successfully solved 101+ problems across multiple programming domains.
+                                    Successfully solved 120+ problems across multiple programming domains.
                                 </p>
                             </div>
                         </div>
@@ -629,7 +704,7 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Completed -->
+                <!-- Project 2: COMPLETED (Updated) -->
                 <div class="project-card fade-in-up" data-category="ml">
                     <div class="project-img-wrapper">
                         <img src="https://drive.google.com/uc?export=view&id=1ynZMWZ0z-4N0ki70P8ngk9BDSadMzRaf" 
@@ -638,6 +713,8 @@
                              onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F4788/FFF?text=AI+Dental+Checker'">
                     </div>
                     <div class="project-content">
+                        <!-- NEW COMPLETED BADGE -->
+                        <span class="status-badge completed"><i class="fas fa-check-circle"></i> Completed</span>
                         <h3>AI-Powered Dental Cavity Checker</h3>
                         <div class="project-tags">
                             <span class="tag">Python</span>
@@ -716,16 +793,22 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- PROFESSIONAL FOOTER -->
     <footer>
-        <div class="container">
+        <div class="container footer-content">
+            <div class="footer-logo">Sakthivel<span>.Dev</span></div>
+            
             <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/sakthivel-c-64975a35b/" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/sakthivel-136" class="social-btn"><i class="fab fa-github"></i></a>
-                <a href="http://www.skillrack.com/profile/560153/ef219f0762c92faff99fb9714361ad454d82298e" class="social-btn"><i class="fas fa-code"></i></a>
+                <a href="https://www.linkedin.com/in/sakthivel-c-64975a35b/" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/sakthivel-136" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="http://www.skillrack.com/profile/560153/ef219f0762c92faff99fb9714361ad454d82298e" class="social-btn" aria-label="Skillrack"><i class="fas fa-code"></i></a>
             </div>
-            <p style="font-weight: 600; color: #fff;">Build by SAKTHI VEL C </p>
-            <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.6;">&copy; 2025 All Rights Reserved.</p>
+
+            <p class="footer-credit">Build by SAKTHI VEL C </p>
+
+            <div class="footer-copyright">
+                &copy; 2025 All Rights Reserved.
+            </div>
         </div>
     </footer>
 
