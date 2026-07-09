@@ -20,25 +20,21 @@
            1. CSS VARIABLES & RESET
            ========================================= */
         :root {
-            /* Color Palette */
-            --primary: #1F4788;      /* Navy Blue */
+            --primary: #1F4788;
             --primary-light: #2d5ea0;
-            --secondary: #0f172a;    /* Dark Slate */
-            --accent: #4682B4;       /* Steel Blue */
+            --secondary: #0f172a;
+            --accent: #4682B4;
             --accent-glow: rgba(70, 130, 180, 0.4);
             
-            /* Light Mode Backgrounds - PROFESSIONAL SLATE GREY */
-            --bg-body: #F1F5F9;      /* Professional Slate Grey */
+            --bg-body: #F1F5F9;
             --bg-glass: rgba(255, 255, 255, 0.85);
             --bg-card: #FFFFFF;
             --border-glass: rgba(255, 255, 255, 0.6);
             
-            /* Text */
             --text-main: #1E293B;
             --text-light: #64748B;
             --text-white: #FFFFFF;
 
-            /* Effects */
             --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
             --shadow-md: 0 10px 30px -10px rgba(31, 71, 136, 0.15);
             --shadow-lg: 0 20px 40px -10px rgba(31, 71, 136, 0.25);
@@ -47,19 +43,17 @@
         }
 
         [data-theme="dark"] {
-            --primary: #4682B4;      /* Steel Blue Accent */
+            --primary: #4682B4;
             --primary-light: #5dade2;
             --secondary: #0f172a;
-            --accent: #60a5fa;       /* Lighter Blue for Dark Mode */
+            --accent: #60a5fa;
             --accent-glow: rgba(96, 165, 250, 0.3);
 
-            /* Dark Mode Backgrounds */
-            --bg-body: #020617;      /* Very Dark Blue/Black */
+            --bg-body: #020617;
             --bg-glass: rgba(15, 23, 42, 0.7);
             --bg-card: rgba(30, 41, 59, 0.6);
             --border-glass: rgba(255, 255, 255, 0.08);
 
-            /* Text */
             --text-main: #F1F5F9;
             --text-light: #94A3B8;
         }
@@ -91,13 +85,11 @@
 
         ::selection { background: var(--accent); color: #fff; }
 
-        /* Custom scrollbar for a more premium feel */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: var(--bg-body); }
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; border: 2px solid var(--bg-body); }
         [data-theme="dark"] ::-webkit-scrollbar-thumb { background: var(--accent); }
 
-        /* Typography Utilities */
         .text-accent { color: var(--primary); }
         [data-theme="dark"] .text-accent { color: var(--accent); }
         
@@ -291,20 +283,18 @@
         .status-badge {
             font-size: 0.7rem; padding: 4px 10px; border-radius: 20px;
             font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
-            margin-bottom: 12px; display: inline-block; width: fit-content;
+            margin-bottom: 12px; display: inline-flex; align-items: center; gap: 5px; width: fit-content;
         }
         
-        /* In Progress Style */
         .in-progress {
-            background-color: rgba(245, 158, 11, 0.15); /* Amber tint */
-            color: #d97706; /* Amber 600 */
+            background-color: rgba(245, 158, 11, 0.15);
+            color: #d97706;
             border: 1px solid rgba(245, 158, 11, 0.3);
         }
 
-        /* Completed Style */
         .completed {
-            background-color: rgba(16, 185, 129, 0.15); /* Emerald tint */
-            color: #059669; /* Emerald 600 */
+            background-color: rgba(16, 185, 129, 0.15);
+            color: #059669;
             border: 1px solid rgba(16, 185, 129, 0.3);
         }
 
@@ -387,18 +377,64 @@
         .exp-desc li::before { content: '▹'; position: absolute; left: 0; color: var(--primary); }
         [data-theme="dark"] .exp-desc li::before { color: var(--accent); }
 
+        /* CERTIFICATIONS */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        .cert-card {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+        .cert-icon {
+            width: 56px;
+            height: 56px;
+            min-width: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            box-shadow: 0 4px 12px rgba(31, 71, 136, 0.25);
+        }
+        [data-theme="dark"] .cert-icon {
+            background: linear-gradient(135deg, var(--accent), #93c5fd);
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+        }
+        .cert-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+        .cert-issuer {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        [data-theme="dark"] .cert-issuer { color: var(--accent); }
+        .cert-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
         /* PROFESSIONAL FOOTER */
         footer {
-            background: linear-gradient(to bottom, #0f172a, #020617); /* Deep Professional Gradient */
+            background: linear-gradient(to bottom, #0f172a, #020617);
             padding: 80px 0 40px;
             text-align: center;
-            border-top: 4px solid var(--primary); /* Strong top border */
+            border-top: 4px solid var(--primary);
             position: relative;
             overflow: hidden;
             color: #fff;
         }
 
-        /* Subtle Background Pattern for Footer */
         footer::before {
             content: '';
             position: absolute;
@@ -408,7 +444,7 @@
         }
 
         .footer-content {
-            position: relative; z-index: 2; /* Ensure content is above pattern */
+            position: relative; z-index: 2;
         }
 
         .footer-logo {
@@ -429,7 +465,7 @@
 
         .social-btn {
             width: 50px; height: 50px;
-            border-radius: 12px; /* Modern soft square */
+            border-radius: 12px;
             background: rgba(255,255,255,0.05);
             display: flex; justify-content: center; align-items: center;
             transition: var(--transition);
@@ -478,6 +514,7 @@
             .hero-text { text-align: center; margin-bottom: 40px; }
             .hero-avatar { margin: 0 auto 24px; }
             .hero-btns { justify-content: center; }
+            .certs-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             .nav-links {
@@ -489,6 +526,7 @@
             .mobile-toggle { display: block; }
             .hero h1 { font-size: 2.5rem; }
             .canvas-container { height: 350px; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -507,6 +545,7 @@
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 </ul>
                 <div class="theme-toggle" id="themeToggle" title="Toggle Theme">
                     <i class="fas fa-moon"></i>
@@ -538,9 +577,9 @@
                         <span id="typing-text" class="text-gradient"></span><span class="typing-cursor">&nbsp;</span>
                     </h1>
                     <p class="hero-tagline">
-                        Specializing in full-stack development, machine learning, and IoT solutions. Proficient in Python, JavaScript, and SQL.
+                        Specializing in full-stack development, machine learning, and IoT solutions. Proficient in Python, JavaScript, and SQL with a focus on building secure, scalable systems.
                     </p>
-                    <div class="hero-btns">
+                    <div class="hero-btns" style="display: flex; gap: 16px; flex-wrap: wrap;">
                         <a href="#projects" class="btn btn-primary">View Projects</a>
                         <a href="resume.pdf" class="btn btn-outline" target="_blank"><i class="fas fa-download"></i> Resume</a>
                     </div>
@@ -567,12 +606,12 @@
                 <p class="text-accent" style="font-weight: 600;">Internships</p>
             </div>
             <div class="glass-card stat-card fade-in-up">
-                <span class="stat-number">35%</span>
+                <span class="stat-number">40%</span>
                 <p class="text-accent" style="font-weight: 600;">Perf. Boost</p>
             </div>
             <div class="glass-card stat-card fade-in-up">
-                <span class="stat-number">ISRO</span>
-                <p class="text-accent" style="font-weight: 600;">Certified</p>
+                <span class="stat-number">4</span>
+                <p class="text-accent" style="font-weight: 600;">Certifications</p>
             </div>
         </div>
     </div>
@@ -590,7 +629,7 @@
                             <span class="timeline-date">2023 - Present</span>
                             <h3 style="font-size: 1.2rem;">Bachelor of Engineering in Computer Science</h3>
                             <p style="color: var(--text-light); font-size: 0.95rem;">Kamaraj College of Engineering and Technology, Virudhunagar</p>
-                            <p style="color: var(--primary); font-weight: 600; margin-top: 4px;">GPA: 7.42/10</p>
+                            <p style="color: var(--primary); font-weight: 600; margin-top: 4px;">GPA: 7.44/10 (till 5th sem)</p>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
@@ -607,12 +646,36 @@
                     <br>
                     <div class="glass-card" style="margin-bottom: 20px;">
                         <div style="display: flex; gap: 15px; align-items: start;">
-                            <i class="fas fa-award" style="color: var(--primary); font-size: 1.5rem; margin-top: 4px;"></i>
+                            <i class="fas fa-trophy" style="color: var(--primary); font-size: 1.5rem; margin-top: 4px;"></i>
                             <div>
-                                <h4 style="margin-bottom: 4px;">ISRO AIML Certified</h4>
-                                <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px;">April 2025</p>
+                                <h4 style="margin-bottom: 4px;">Grand Winner — Student Pitch Competition</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px;">Mini Technovision 2K26</p>
                                 <p style="font-size: 0.95rem; line-height: 1.6;">
-                                    Application of AIML for Crop Acreage Mapping. Issued by ISRO (Online Conference) for precision farming.
+                                    Secured first place in the student pitch competition, presenting an innovative technical solution to a panel of industry experts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card" style="margin-bottom: 20px;">
+                        <div style="display: flex; gap: 15px; align-items: start;">
+                            <i class="fas fa-microphone-alt" style="color: var(--primary); font-size: 1.5rem; margin-top: 4px;"></i>
+                            <div>
+                                <h4 style="margin-bottom: 4px;">Research Presenter — ICASET 2026</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px;">International Conference, Chennai</p>
+                                <p style="font-size: 0.95rem; line-height: 1.6;">
+                                    Presented research findings on IoT-integrated Air Quality Monitoring Systems at the ICASET-2026 International Conference.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card" style="margin-bottom: 20px;">
+                        <div style="display: flex; gap: 15px; align-items: start;">
+                            <i class="fas fa-file-alt" style="color: var(--primary); font-size: 1.5rem; margin-top: 4px;"></i>
+                            <div>
+                                <h4 style="margin-bottom: 4px;">Patent Filed — "Mr. Strict"</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px;">Intellectual Property Application</p>
+                                <p style="font-size: 0.95rem; line-height: 1.6;">
+                                    Filed a patent for "Mr. Strict" — an AI-powered proctoring system designed to ensure exam integrity through real-time monitoring and intelligent anomaly detection.
                                 </p>
                             </div>
                         </div>
@@ -649,40 +712,48 @@
                     <span class="skill-pill">JavaScript</span>
                     <span class="skill-pill">SQL</span>
                     <span class="skill-pill">HTML5/CSS3</span>
+                    <span class="skill-pill">Tailwind CSS</span>
                 </div>
             </div>
 
             <div class="skills-category fade-in-up">
-                <h3><i class="fas fa-layer-group text-accent"></i> Web Development</h3>
+                <h3><i class="fas fa-layer-group text-accent"></i> Web Development & Frameworks</h3>
                 <div class="skill-pills">
-                    <span class="skill-pill">Next.js</span>
+                    <span class="skill-pill">Next.js 14</span>
                     <span class="skill-pill">React</span>
                     <span class="skill-pill">Flutter</span>
                     <span class="skill-pill">FastAPI</span>
                     <span class="skill-pill">Flask</span>
                     <span class="skill-pill">Node.js</span>
+                    <span class="skill-pill">Supabase</span>
                 </div>
             </div>
 
             <div class="skills-category fade-in-up">
-                <h3><i class="fas fa-database text-accent"></i> Data & Databases</h3>
+                <h3><i class="fas fa-database text-accent"></i> Data, ML & AI</h3>
                 <div class="skill-pills">
                     <span class="skill-pill">PostgreSQL</span>
                     <span class="skill-pill">MySQL</span>
                     <span class="skill-pill">TensorFlow</span>
+                    <span class="skill-pill">XGBoost</span>
+                    <span class="skill-pill">Random Forest</span>
                     <span class="skill-pill">GenAI</span>
+                    <span class="skill-pill">Gemini 1.5 Pro</span>
                     <span class="skill-pill">Streamlit</span>
                 </div>
             </div>
 
             <div class="skills-category fade-in-up">
-                <h3><i class="fas fa-tools text-accent"></i> Tools & Others</h3>
+                <h3><i class="fas fa-tools text-accent"></i> Tools, IoT & Others</h3>
                 <div class="skill-pills">
                     <span class="skill-pill">Git & GitHub</span>
                     <span class="skill-pill">VS Code</span>
-                    <span class="skill-pill">Arduino IDE</span>
+                    <span class="skill-pill">ESP32 / Arduino</span>
+                    <span class="skill-pill">MQTT</span>
                     <span class="skill-pill">IoT Integration</span>
                     <span class="skill-pill">JWT Auth</span>
+                    <span class="skill-pill">RBAC</span>
+                    <span class="skill-pill">RESTful APIs</span>
                 </div>
             </div>
         </div>
@@ -704,24 +775,29 @@
             </div>
 
             <div class="projects-grid">
-                <!-- Project 1: Security Rounds Verifier - COMPLETED -->
+                <!-- Project 1: DigiSphere - COMPLETED -->
                 <div class="project-card fade-in-up" data-category="web">
                     <div class="project-img-wrapper">
                         <img src="https://drive.google.com/uc?export=view&id=1yL2UmdsS9TIuQlSt1kF277sq5dCfSAdD" 
-                             alt="Security Rounds" 
+                             alt="DigiSphere" 
                              class="project-img"
-                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F4788/FFF?text=Security+Verifier'">
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F4788/FFF?text=DigiSphere'">
                     </div>
                     <div class="project-content">
                         <span class="status-badge completed"><i class="fas fa-check-circle"></i> Completed</span>
-                        <h3>Security Rounds Verifier</h3>
+                        <h3>DigiSphere — Security Verification System</h3>
                         <div class="project-tags">
                             <span class="tag">Next.js</span>
                             <span class="tag">FastAPI</span>
                             <span class="tag">PostgreSQL</span>
+                            <span class="tag">JWT</span>
+                            <span class="tag">RBAC</span>
                         </div>
-                        <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 20px; flex-grow: 1;">
-                            Full-stack security verification system with role-based access control and real-time monitoring. Achieved target response time reduction.
+                        <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 12px; flex-grow: 1;">
+                            Full-stack security verification system with Role-Based Access Control (RBAC) and real-time monitoring. Optimized database queries reducing response time by 40% for high-concurrency environments.
+                        </p>
+                        <p style="font-size: 0.85rem; color: var(--primary); font-weight: 600; margin-bottom: 16px;">
+                            <i class="fas fa-certificate"></i> Certified by Pentagon Garments for successful completion and live deployment into production.
                         </p>
                         <div class="project-links" style="display: flex; gap: 12px; flex-wrap: wrap;">
                             <a href="https://apps.pentagontextiles.com" target="_blank" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;"><i class="fas fa-globe"></i> Live Demo</a>
@@ -755,7 +831,7 @@
                     </div>
                 </div>
 
-                <!-- Project 3: IoT Smart Air Quality Monitor - NOW COMPLETED -->
+                <!-- Project 3: IoT Smart Air Quality Monitor - COMPLETED -->
                 <div class="project-card fade-in-up" data-category="iot">
                     <div class="project-img-wrapper">
                         <img src="https://drive.google.com/uc?export=view&id=1xOstLEfzUmpD_nutJloROrnMYOSOgDaV" 
@@ -767,12 +843,16 @@
                         <span class="status-badge completed"><i class="fas fa-check-circle"></i> Completed</span>
                         <h3>IoT Smart Air Quality Monitor</h3>
                         <div class="project-tags">
-                            <span class="tag">Arduino</span>
+                            <span class="tag">ESP32</span>
                             <span class="tag">Python</span>
+                            <span class="tag">Random Forest</span>
                             <span class="tag">IoT</span>
                         </div>
-                        <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 20px; flex-grow: 1;">
-                            Predictive Alert System identifying health risks and detecting HVAC inefficiencies using IoT sensors and data analytics.
+                        <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 12px; flex-grow: 1;">
+                            Predictive alert system using Random Forest to identify health risks and detect HVAC inefficiencies. IoT sensors with real-time data analytics and automated reporting.
+                        </p>
+                        <p style="font-size: 0.85rem; color: var(--primary); font-weight: 600; margin-bottom: 16px;">
+                            <i class="fas fa-microphone-alt"></i> Presented at ICASET-2026 International Conference, Chennai.
                         </p>
                         <div class="project-links">
                             <a href="https://github.com/sakthivel-136" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;"><i class="fab fa-github"></i> Code</a>
@@ -829,6 +909,28 @@
                     </div>
                 </div>
 
+                <!-- Project 6: Resume Builder - IN PROGRESS (NEW) -->
+                <div class="project-card fade-in-up" data-category="web">
+                    <div class="project-img-wrapper">
+                        <img src="https://placehold.co/600x400/1F4788/FFF?text=Resume+Builder" 
+                             alt="Resume Builder" 
+                             class="project-img"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F4788/FFF?text=Resume+Builder'">
+                    </div>
+                    <div class="project-content">
+                        <span class="status-badge in-progress"><i class="fas fa-spinner fa-spin"></i> In Progress</span>
+                        <h3>Resume Builder — Template-Driven Resume Creator</h3>
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Tailwind CSS</span>
+                        </div>
+                        <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 20px; flex-grow: 1;">
+                            A template-driven resume builder designed to help juniors, students, and job seekers create professional, well-structured resumes effortlessly. Offers multiple customizable templates, real-time live preview, and one-click export — making it easy for anyone to craft a polished resume tailored to their needs without any design skills.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -845,11 +947,13 @@
                     <h3 class="exp-role">Software Developer Intern</h3>
                     <div class="exp-company">
                         <i class="fas fa-building"></i> PENTAGON GARMENTS
-                        <span style="margin-left: auto; font-size: 0.9rem; opacity: 0.8;">Dec 2025 - Present</span>
+                        <span style="margin-left: auto; font-size: 0.9rem; opacity: 0.8;">Dec 2025 - Jun 2026</span>
                     </div>
                     <ul class="exp-desc">
-                        <li>Developed secure verification system with RESTful APIs, JWT authentication, and role-based access control.</li>
-                        <li>Optimized monitoring dashboards and database queries, reducing server response time by 35%.</li>
+                        <li>Developed a secure verification system with RESTful APIs, JWT authentication, and Role-Based Access Control (RBAC).</li>
+                        <li>Independently built and deployed the DigiSphere system into production, currently in active daily use by their security staff.</li>
+                        <li>Optimized database queries and monitoring dashboards, reducing server response time by 40% for high-concurrency environments.</li>
+                        <li>Received official certification from Pentagon Garments for successful project completion and real-world deployment.</li>
                     </ul>
                 </div>
 
@@ -860,9 +964,70 @@
                         <span style="margin-left: auto; font-size: 0.9rem; opacity: 0.8;">June 2025 - Nov 2025</span>
                     </div>
                     <ul class="exp-desc">
+                        <li>Developed and deployed predictive Machine Learning models using XGBoost and Random Forest to enhance system accuracy and project performance.</li>
                         <li>Hands-on experience in Supervised, Unsupervised, and Reinforcement Learning algorithms.</li>
                         <li>Analyzed real-world datasets to determine effective machine learning models for various industry applications.</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title"><span class="text-gradient">Certifications</span> & Credentials</h2>
+                <p class="section-subtitle">Industry-recognized certifications and intellectual property credentials.</p>
+            </div>
+
+            <div class="certs-grid">
+                <!-- Oracle Certification -->
+                <div class="glass-card cert-card fade-in-up">
+                    <div class="cert-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div>
+                        <h4 class="cert-title">Agentic AI Certified Foundations Associate</h4>
+                        <p class="cert-issuer">Oracle University</p>
+                        <p class="cert-desc">Earned the Oracle University certification demonstrating foundational knowledge in Agentic AI concepts, architectures, and real-world applications.</p>
+                    </div>
+                </div>
+
+                <!-- ISRO Certification -->
+                <div class="glass-card cert-card fade-in-up">
+                    <div class="cert-icon" style="background: linear-gradient(135deg, #1a5276, #2e86c1);">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <div>
+                        <h4 class="cert-title">AIML for Crop Acreage Mapping</h4>
+                        <p class="cert-issuer">ISRO (Indian Space Research Organisation)</p>
+                        <p class="cert-desc">Completed official ISRO online workshop on the application of AI and Machine Learning for precision farming and crop acreage mapping.</p>
+                    </div>
+                </div>
+
+                <!-- Pentagon Garments Certification -->
+                <div class="glass-card cert-card fade-in-up">
+                    <div class="cert-icon" style="background: linear-gradient(135deg, #0e6655, #1abc9c);">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div>
+                        <h4 class="cert-title">DigiSphere Project — Completion & Deployment</h4>
+                        <p class="cert-issuer">Certified by Pentagon Garments</p>
+                        <p class="cert-desc">Officially certified by Pentagon Garments for successfully developing and deploying the DigiSphere security verification system into real-world production use. The system is actively used daily by their security staff.</p>
+                    </div>
+                </div>
+
+                <!-- Patent Filed -->
+                <div class="glass-card cert-card fade-in-up">
+                    <div class="cert-icon" style="background: linear-gradient(135deg, #7d3c98, #af7ac5);">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <div>
+                        <h4 class="cert-title">Patent Filed — "Mr. Strict" AI Proctoring</h4>
+                        <p class="cert-issuer">Intellectual Property Application</p>
+                        <p class="cert-desc">Filed a patent for "Mr. Strict" — an AI-powered proctoring system designed to ensure examination integrity through real-time monitoring, intelligent anomaly detection, and automated reporting.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -928,6 +1093,15 @@
             }
         });
 
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const menuIcon = mobileToggle.querySelector('i');
+                menuIcon.classList.remove('fa-times'); menuIcon.classList.add('fa-bars');
+            });
+        });
+
         // 2. TYPING EFFECT
         const textElement = document.getElementById('typing-text');
         const phrases = ["Full-Stack Developer", "ML Enthusiast", "IoT Innovator"];
@@ -950,11 +1124,11 @@
 
             if (!isDeleting && charIndex === currentPhrase.length) {
                 isDeleting = true;
-                typeSpeed = 2000; // Pause at end
+                typeSpeed = 2000;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 500; // Pause before new word
+                typeSpeed = 500;
             }
             setTimeout(type, typeSpeed);
         }
@@ -1003,141 +1177,94 @@
                         setTimeout(() => card.style.opacity = '1', 10);
                     } else {
                         card.style.opacity = '0';
-                        setTimeout(() => card.style.display = 'none', 300);
+                        setTimeout(() => card.style.display = 'none', 400);
                     }
                 });
             });
         });
 
-        // 5. 3D TILT EFFECT
-        const cards = document.querySelectorAll('.project-card');
-        cards.forEach(card => {
+        // 5. 3D TILT EFFECT ON PROJECT CARDS
+        document.querySelectorAll('.project-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                
-                const xCenter = rect.width / 2;
-                const yCenter = rect.height / 2;
-                const rotateX = ((y - yCenter) / yCenter) * -5;
-                const rotateY = ((x - xCenter) / xCenter) * 5;
-
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -5;
+                const rotateY = ((x - centerX) / centerX) * 5;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
             });
-
             card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
             });
         });
 
-        // 6. ENHANCED CANVAS ANIMATION
+        // 6. NETWORK CANVAS ANIMATION
         const canvas = document.getElementById('networkCanvas');
         const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
-        let mouse = { x: null, y: null, radius: 150 };
+        let nodes = [];
+        const nodeCount = 45;
 
-        window.addEventListener('mousemove', (event) => {
-            const rect = canvas.getBoundingClientRect();
-            mouse.x = event.clientX - rect.left;
-            mouse.y = event.clientY - rect.top;
-        });
-        window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
-
-        function resize() {
-            const wrapper = document.querySelector('.canvas-container');
-            width = wrapper.clientWidth;
-            height = wrapper.clientHeight;
-            canvas.width = width;
-            canvas.height = height;
-            initParticles();
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            canvas.width = container.offsetWidth;
+            canvas.height = container.offsetHeight;
         }
-        window.addEventListener('resize', resize);
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
 
-        class Particle {
+        class Node {
             constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 1.5;
-                this.vy = (Math.random() - 0.5) * 1.5;
-                this.size = Math.random() * 2 + 1;
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.8;
+                this.vy = (Math.random() - 0.5) * 0.8;
+                this.radius = Math.random() * 2.5 + 1.5;
             }
             update() {
                 this.x += this.vx;
                 this.y += this.vy;
-                if (this.x < 0 || this.x > width) this.vx *= -1;
-                if (this.y < 0 || this.y > height) this.vy *= -1;
-                if(mouse.x != null) {
-                    let dx = mouse.x - this.x;
-                    let dy = mouse.y - this.y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < mouse.radius) {
-                        const forceDirectionX = dx / distance;
-                        const forceDirectionY = dy / distance;
-                        const force = (mouse.radius - distance) / mouse.radius;
-                        const directionX = forceDirectionX * force * 5;
-                        const directionY = forceDirectionY * force * 5;
-                        this.x -= directionX;
-                        this.y -= directionY;
-                    }
-                }
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
             }
             draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 const isDark = body.getAttribute('data-theme') === 'dark';
-                ctx.fillStyle = isDark ? '#60a5fa' : '#1F4788';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = isDark ? 'rgba(96, 165, 250, 0.9)' : 'rgba(31, 71, 136, 0.9)';
                 ctx.fill();
             }
         }
 
-        function initParticles() {
-            particles = [];
-            const particleCount = width < 600 ? 50 : 80; 
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
+        for (let i = 0; i < nodeCount; i++) nodes.push(new Node());
 
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             const isDark = body.getAttribute('data-theme') === 'dark';
-            const lineColor = isDark ? 'rgba(96, 165, 250, 0.15)' : 'rgba(31, 71, 136, 0.15)';
-
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-                for (let j = i; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 100) {
+            
+            for (let i = 0; i < nodes.length; i++) {
+                nodes[i].update();
+                nodes[i].draw();
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 130) {
                         ctx.beginPath();
-                        ctx.strokeStyle = lineColor;
-                        ctx.lineWidth = 1;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-                if(mouse.x != null) {
-                    let dx = particles[i].x - mouse.x;
-                    let dy = particles[i].y - mouse.y;
-                    let distance = Math.sqrt(dx*dx + dy*dy);
-                    if (distance < 150) { 
-                        ctx.beginPath();
-                        ctx.strokeStyle = isDark ? 'rgba(96, 165, 250, 0.3)' : 'rgba(31, 71, 136, 0.3)';
-                        ctx.lineWidth = 1;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.strokeStyle = isDark 
+                            ? `rgba(96, 165, 250, ${0.25 * (1 - dist / 130)})` 
+                            : `rgba(31, 71, 136, ${0.2 * (1 - dist / 130)})`;
+                        ctx.lineWidth = 0.8;
                         ctx.stroke();
                     }
                 }
             }
-            requestAnimationFrame(animate);
+            requestAnimationFrame(animateCanvas);
         }
-        resize();
-        animate();
+        animateCanvas();
     </script>
 </body>
 </html>
